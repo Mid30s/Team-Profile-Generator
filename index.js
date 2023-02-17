@@ -7,7 +7,9 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 // Create an empty array to store team member data
-const teamMembers = [];
+const managers = [];
+const engineers = [];
+const interns = [];
 
 // Create an array of questions for manager input
 const managerQuestions = [
@@ -181,7 +183,7 @@ function promptData() {
             // create an instance of the Manager class
             const manager = new Manager(managerData.name,managerData.id,managerData.email,managerData.officeNumber);
             // push the manager instance to the teamMembers array
-            teamMembers.push(manager);
+            managers.push(manager);
             // call the function to prompt for additional team members
             promptTeamMembers();
         })
@@ -208,7 +210,7 @@ function promptTeamMembers() {
                             // create an instance of the Engineer class
                             const engineer = new Engineer(engineerData.name,engineerData.id,engineerData.email,engineerData.github);
                             // push the engineer instance to the teamMembers array
-                            teamMembers.push(engineer);
+                            engineers.push(engineer);
                             // call the function to prompt for additional team members
                             promptTeamMembers();
                         })
@@ -222,7 +224,7 @@ function promptTeamMembers() {
                             // create an instance of the Intern class
                             const intern = new Intern(internData.name,internData.id,internData.email,internData.school);
                             // push the intern instance to the teamMembers array
-                            teamMembers.push(intern);
+                            interns.push(intern);
                             // call the function to prompt for additional team members
                             promptTeamMembers();
                         })
@@ -232,7 +234,7 @@ function promptTeamMembers() {
                     break;
                 case "I'm done adding team members":
                   // call the function to generate the HTML file
-                  const html = generateHTML(teamMembers);
+                  const html = generateHTML(managers, engineers, interns);
                   fs.writeFile('./dist/index.html', html, err => {
                     if (err) throw err;
                     console.log(chalk.bgYellow.bold("Team Profile successfully generated! Check out the HTML file in /dist folder!"));

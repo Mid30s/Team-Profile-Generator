@@ -237,7 +237,7 @@ function promptTeamMembers() {
                   const html = generateHTML(managers, engineers, interns);
                   fs.writeFile('./dist/index.html', html, err => {
                     if (err) throw err;
-                    console.log(chalk.bgYellow.bold("Team Profile successfully generated! Check out the HTML file in /dist folder!"));
+                    console.log(chalk.bgYellow.bold("* Team Profile successfully generated! Check out the HTML file in /dist folder!"));
                   })
   
                   

@@ -7,7 +7,7 @@ const managerSection = managers => {
             <div class="column card is-one-quarter my-5 p-0">
                 <header class="card-header has-background-primary is-flex-direction-column p-5 ">
                     <h2 class="title title is-size-4 mb-0 has-text-white">
-                      <b>${name}</b> 
+                      <b>${name.toUpperCase()}</b> 
                     </h2>
 
                     <h2 class="title is-size-3 has-text-weight-bold mt-3 has-text-white">                       
@@ -45,7 +45,7 @@ const engineerSection = engineers => {
             <div class="column card is-two-fifths m-3 p-0">
                 <header class="card-header has-background-info is-flex-direction-column p-5 ">
                     <h2 class="title title is-size-4 mb-0 has-text-white has-text-weight-bold">
-                    ${name} 
+                    ${name.toUpperCase()} 
                     </h2>
 
                     <h2 class="title is-size-3 has-text-weight-bold mt-3 has-text-white">                       
@@ -82,7 +82,7 @@ const internSection = interns => {
             <div class="column card is-two-thirds m-3 p-0">
                 <header class="card-header has-background-warning is-flex-direction-column p-5">
                     <h2 class="title title is-size-4 mb-0 has-text-grey has-text-weight-bold">
-                    ${name}
+                    ${name.toUpperCase()}
                     </h2>
 
                     <h2 class="title is-size-3 has-text-weight-bold mt-3 has-text-grey">  
@@ -100,7 +100,7 @@ const internSection = interns => {
                             <p class="is-size-4"><b>Email:</b> <a href="mailto:${email}">${email}</a> </p>
                         </li>
                         <li class="content-item">
-                            <p class="is-size-4"><b>School:</b> ${school}</p>
+                            <p class="is-size-4"><b>School:</b> ${school.toUpperCase()}</p>
                         </li>    
                     </ul>
                 </div>

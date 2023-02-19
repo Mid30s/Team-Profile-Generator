@@ -1,4 +1,4 @@
-
+// manager section
 const managerSection = managers => {
     return `
     ${managers
@@ -36,7 +36,7 @@ const managerSection = managers => {
     }`
 }
 
-
+// Engineer section
 const engineerSection = engineers => {
     return `
     ${engineers
@@ -74,6 +74,7 @@ const engineerSection = engineers => {
     }`
 }
 
+// Intern section
 const internSection = interns => {
     return `
     ${interns
@@ -111,11 +112,7 @@ const internSection = interns => {
     }`
 }
 
-
-
-
-
-
+//html template
 function generateHTML(managers, engineers, interns) {
     return `
 <!DOCTYPE html>
@@ -163,5 +160,5 @@ function generateHTML(managers, engineers, interns) {
 };
 
   
-  module.exports = generateHTML;
+module.exports = generateHTML;
   

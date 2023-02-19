@@ -6,7 +6,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
-// Create an empty array to store team member data
+// Create an empty array to store each team member data
 const managers = [];
 const engineers = [];
 const interns = [];
@@ -30,38 +30,40 @@ const managerQuestions = [
         type: "input",
         name: "id",
         message: "What is the team manager's id? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter the team manager's id";
-            }
-        }  
+        validate: function (input) {
+          // Check if the input is a number
+          if (isNaN(input)) {
+            return "Please enter a number";
+          }
+          return true;
+        }, 
     },
 
     {
         type: "input",
         name: "email",
         message: "What is the team manager's email? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
+        validate: function(email) {
+          // Use regular expression to validate email format
+          const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (regex.test(email)) {
               return true;
-            } else {
-              return "Please enter the team manager's email";
+          } else {
+              return "Please enter a valid email address.";
             }
-        }  
+          }  
     },
 
     {
         type: "input",
         name: "officeNumber",
         message: "What is the team manager's office number? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter the team manager's office number";
-            }
+        validate: function (input) {
+          // Check if the input is a number
+          if (isNaN(input)) {
+            return "Please enter a number";
+          }
+          return true;
         }  
     },   
 ];
@@ -85,26 +87,28 @@ const engineerQuestions = [
         type: "input",
         name: "id",
         message: "What is your engineer's id? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter your engineer's id";
-            }
-        }  
+        validate: function (input) {
+          // Check if the input is a number
+          if (isNaN(input)) {
+            return "Please enter a number";
+          }
+          return true;
+        },  
     },
 
     {
         type: "input",
         name: "email",
         message: "What is your engineer's email? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
+        validate: function(email) {
+          // Use regular expression to validate email format
+          const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (regex.test(email)) {
               return true;
-            } else {
-              return "Please enter your engineer's email";
+          } else {
+              return "Please enter a valid email address.";
             }
-        }  
+        }   
     },
     
     {
@@ -140,12 +144,12 @@ const internQuestions = [
         type: "input",
         name: "id",
         message: "What is your intern's id? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter your intern's id";
-            }
+        validate: function (input) {
+          // Check if the input is a number
+          if (isNaN(input)) {
+            return "Please enter a number";
+          }
+          return true;
         }  
     },
 
@@ -153,13 +157,15 @@ const internQuestions = [
         type: "input",
         name: "email",
         message: "What is your intern's email? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
+        validate: function(email) {
+          // Use regular expression to validate email format
+          const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (regex.test(email)) {
               return true;
-            } else {
-              return "Please enter your intern's email";
+          } else {
+              return "Please enter a valid email address.";
             }
-        }  
+        }    
     },
 
     {

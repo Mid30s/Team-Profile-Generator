@@ -17,12 +17,14 @@ const managerQuestions = [
         type: "input",
         name: "name",
         message: "What is the team manager's name? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter the team manager's name";
-            }
+        validate: function (input) {
+          // Check if the input has both first name and surname
+          const fullNameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+          if (fullNameRegex.test(input)) {
+            return true;
+          } else {
+            return "Please enter a valid full name with both first name and surname!";
+          }
         }  
     },
 
@@ -33,7 +35,7 @@ const managerQuestions = [
         validate: function (input) {
           // Check if the input is a number
           if (isNaN(input)) {
-            return "Please enter a number";
+            return "Please enter a number!";
           }
           return true;
         }, 
@@ -49,7 +51,7 @@ const managerQuestions = [
           if (regex.test(email)) {
               return true;
           } else {
-              return "Please enter a valid email address.";
+              return "Please enter a valid email address!";
             }
           }  
     },
@@ -61,7 +63,7 @@ const managerQuestions = [
         validate: function (input) {
           // Check if the input is a number
           if (isNaN(input)) {
-            return "Please enter a number";
+            return "Please enter a number!";
           }
           return true;
         }  
@@ -74,12 +76,14 @@ const engineerQuestions = [
         type: "input",
         name: "name",
         message: "What is your engineer's name? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter your engineer's name";
-            }
+        validate: function (input) {
+          // Check if the input has both first name and surname
+          const fullNameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+          if (fullNameRegex.test(input)) {
+            return true;
+          } else {
+            return "Please enter a valid full name with both first name and surname!";
+          }
         }  
     },
 
@@ -90,7 +94,7 @@ const engineerQuestions = [
         validate: function (input) {
           // Check if the input is a number
           if (isNaN(input)) {
-            return "Please enter a number";
+            return "Please enter a number!";
           }
           return true;
         },  
@@ -106,7 +110,7 @@ const engineerQuestions = [
           if (regex.test(email)) {
               return true;
           } else {
-              return "Please enter a valid email address.";
+              return "Please enter a valid email address!";
             }
         }   
     },
@@ -119,7 +123,7 @@ const engineerQuestions = [
             if (input.length > 0) {
               return true;
             } else {
-              return "Please enter your engineer's github username";
+              return "Please enter your engineer's github username!";
             }
         }  
     },   
@@ -131,12 +135,14 @@ const internQuestions = [
         type: "input",
         name: "name",
         message:"What is your intern's name? (Required)",
-        validate: function(input) {
-            if (input.length > 0) {
-              return true;
-            } else {
-              return "Please enter your intern's name";
-            }
+        validate: function (input) {
+          // Check if the input has both first name and surname
+          const fullNameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+          if (fullNameRegex.test(input)) {
+            return true;
+          } else {
+            return "Please enter a valid full name with both first name and surname!";
+          }
         }  
     },
 
@@ -147,7 +153,7 @@ const internQuestions = [
         validate: function (input) {
           // Check if the input is a number
           if (isNaN(input)) {
-            return "Please enter a number";
+            return "Please enter a number!";
           }
           return true;
         }  
@@ -163,7 +169,7 @@ const internQuestions = [
           if (regex.test(email)) {
               return true;
           } else {
-              return "Please enter a valid email address.";
+              return "Please enter a valid email address!";
             }
         }    
     },
@@ -176,7 +182,7 @@ const internQuestions = [
             if (input.length > 0) {
               return true;
             } else {
-              return "Please enter your intern's school";
+              return "Please enter your intern's school!";
             }
         }  
     },   

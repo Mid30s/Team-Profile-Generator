@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "reset": "rm -rf dist && mkdir dist"
   },
   "repository": {
     "type": "git",

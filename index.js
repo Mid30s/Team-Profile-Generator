@@ -194,7 +194,7 @@ function promptData() {
         .then((managerData) => {
             // create an instance of the Manager class
             const manager = new Manager(managerData.name,managerData.id,managerData.email,managerData.officeNumber);
-            // push the manager instance to the teamMembers array
+            // push the manager instance to the manager array
             managers.push(manager);
             // call the function to prompt for additional team members
             promptTeamMembers();
@@ -221,9 +221,9 @@ function promptTeamMembers() {
                         .then((engineerData) => {
                             // create an instance of the Engineer class
                             const engineer = new Engineer(engineerData.name,engineerData.id,engineerData.email,engineerData.github);
-                            // push the engineer instance to the teamMembers array
+                            // push the engineer instance to the engineer array
                             engineers.push(engineer);
-                            // call the function to prompt for additional team members
+                            // call the function to prompt for additional team members again
                             promptTeamMembers();
                         })
                         .catch((error) => {
@@ -235,9 +235,9 @@ function promptTeamMembers() {
                         .then((internData) => {
                             // create an instance of the Intern class
                             const intern = new Intern(internData.name,internData.id,internData.email,internData.school);
-                            // push the intern instance to the teamMembers array
+                            // push the intern instance to the intern array
                             interns.push(intern);
-                            // call the function to prompt for additional team members
+                            // call the function to prompt for additional team members again
                             promptTeamMembers();
                         })
                         .catch((error) => {
@@ -250,12 +250,11 @@ function promptTeamMembers() {
                   fs.writeFile('./dist/index.html', html, err => {
                     if (err) throw err;
                     console.log(chalk.bgYellow.bold("* Team Profile successfully generated! Check out the HTML file in /dist folder!"));
-                  })
-  
-                  
+                  })  
+                
             }
         })
-    };
+};
 
   
 // initialize the app
